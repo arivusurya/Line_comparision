@@ -26,19 +26,19 @@ namespace LineComparision{
             Console.WriteLine("Enter Y2: ");
             y2 = Convert.ToDouble(Console.ReadLine());
             MyLine line2 = new MyLine(x1, y1, x2, y2);
-            Program.compare(line1,line2);
-
-        
-        }
-          public static void compare(MyLine line1,MyLine line2){
-            double m  = (line1.Y1-line1.Y2)/(line1.X1-line1.X2);
-            double m1  = (line2.Y1-line2.Y2)/(line2.X1-line2.X2);
-            if (m == m1){
-                Console.WriteLine("lines are parallel");
+            double len1= LineComparision.Lengthofline.Linelegth(line1.X1,line1.Y1,line1.X2,line1.Y2);
+            double len2=Lengthofline.Linelegth(line2.X1,line2.Y1,line2.X2,line2.Y2);
+            Console.WriteLine(len1);
+            Console.WriteLine(len2);
+            if (len1 == len2){
+                Console.WriteLine("equal");
+            }else if(len1 > len2){
+                Console.WriteLine("line1 is greater");
             }else{
-                      Console.WriteLine("lines are not parallel");
-    }
-    }
+                Console.WriteLine("line2 is greater");
+            }
+        }
+         
 
 }
 }
